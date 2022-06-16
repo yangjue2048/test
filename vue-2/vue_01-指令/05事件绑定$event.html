@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+
+    <!-- 希望vue能控制下面的div，帮我们把数据填充到div内部 -->
+    <div id="app">
+        <p>count 的值是：{{ count }} </p>
+        <!-- vue 提供了内置变量，叫做$event，DOM的原生对象 -->
+        <button @click="add(2,$event)">+1</button>
+        <button v-on:click="sub">-1</button>
+    </div>
+
+    <!-- 1. 导入vue的库文件 -->
+    <script src="./lib/vue-2.6.12.js"></script>
+    <!-- 2. 创建 vue 的实例对象 -->
+    <script>
+        //创建 vue 实例对象
+        const vm = new Vue({
+            // el 属性是固定写法，表示当前vm实例要控制页面的哪个区域，接收的值是一个选择器
+            el: '#app',
+            // data 对象就是要渲染到页面上的数据
+            data: {
+                count: 0
+            },
+            methods: {
+                //add: function() {} 可以简写为add() {}
+                add(n,e) {
+                    // vm === this
+                    // vm.count +=1
+                    this.count += n
+
+                    if(this.count % 2 === 0 ) {
+                        e.target.style.backgroundColor = 'blue'
+                    } else {
+                        e.target.style.backgroundColor = 'pink'
+                    }
+                },
+                sub(e) {
+                    this.count -= 1
+
+                    if (this.count % 2 === 0) {
+                        e.target.style.backgroundColor = 'blue'
+                    } else {
+                        e.target.style.backgroundColor = 'pink'
+                    }
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

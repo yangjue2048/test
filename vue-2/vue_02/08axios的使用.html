@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+   
+</head>
+<body>
+
+
+    <script src="../lib/axios.js"></script>
+
+    <script>
+        //  http://www.liulongbin.top:3006/api/getbooks
+
+        // 1.调用 axios 方法得到的返回值是 promise 对象
+        axios({
+            // 请求方式
+            method: 'GET',
+            url: 'http://www.liulongbin.top:3006/api/getbooks',
+            // url 中的查询参数
+            params: {},
+            // 请求体参数
+            data: {}
+        }).then(function(result) {
+            console.log(result);
+        })
+    </script>
+</body>
+</html>

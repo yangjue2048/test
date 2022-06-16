@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+
+    <script>
+
+        const arr = ['小红','小白','小蓝','小绿']
+
+        // forEach 循环一旦开始，无法在中间被停止
+        // arr.forEach((item,index) => {
+        //     if(item === '小蓝') {
+        //         console.log(index);
+        //     }
+        // })
+
+
+         arr.some((item, index) => {
+                if (item === '小蓝') {
+                    console.log(index);
+                    // 在找到对应的项后，可以通过 return true 的固定语法来终止循环
+                    return true
+                }
+            })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+
+    <div id="app">
+        <p>message 的值是： {{ message | capi }}</p>
+    </div>
+
+    <script src="../lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello vue.js'
+            },
+            // 过滤器函数，必须定义到 filters 节点之下
+            //  过滤器本质是函数
+            filters: {
+                // 函数形参中的值，永远都是 | 前面的那个值
+                capi(val) {
+                    const first = val.charAt(0).toUpperCase()
+                    // 截取字符串，从指定索引往后截取
+                    const other = val.slice(1)
+                    // 强调，过滤器中，一定要有一个返回值
+                    return first + other
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+
+    <div id="app">
+       <input type="text" v-model="username">
+    </div>
+
+    <script src="../lib/vue-2.6.12.js"></script>
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: 'admin'
+            },
+            // 所有的侦听器都应被定义到 watch 节点下
+            watch: {
+               
+                username: {
+                   // 侦听器的处理函数
+                   handler(newVal, oldVal) {
+                        console.log(newVal, oldVal);
+                   },
+
+                   // 选项的默认值是false ，控制侦听器自动触发一次
+                   immediate: true
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

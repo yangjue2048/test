@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+
+    <script>
+    const arr = [
+        { id: 1, name: '蓝莓', status: true },
+        { id: 2, name: '苹果', status: false },
+        { id: 3, name: '香蕉', status: true },
+    ]
+
+
+    // 需求，判断数组中，水果是否被全选了
+    const result = arr.every(item => item.status)
+    console.log(result);
+    </script>
+</body>
+</html>
